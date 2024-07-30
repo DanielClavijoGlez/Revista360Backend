@@ -4,11 +4,21 @@ const mongoose = require("mongoose");
 
 const articleSchema = mongoose.Schema({
   title: { type: String, index: true },
-  authors: String,
-  creationDate: { type: Date, default: Date.now },
+  mainImage: String,
+  authors: [String],
+  creationDate: {
+    season: {
+      type: String,
+      enum: ["Primavera", "Verano", "Otoño", "Invierno"],
+    },
+    year: Number,
+  },
   structure: [
     {
-      type: { type: String, enum: ["texto", "imagen"] },
+      type: {
+        type: String,
+        enum: ["text", "image", "heading", "image caption"],
+      },
       content: String,
     },
   ],
@@ -27,7 +37,6 @@ const articleSchema = mongoose.Schema({
     ],
   },
   comments: [String],
-  thumbnail: String,
 });
 
 const Article = mongoose.model("Article", articleSchema);

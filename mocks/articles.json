@@ -1,0 +1,56 @@
+{
+  "articles": [
+    {
+      "title": "El germen del gueto",
+      "mainImage": "http://127.0.0.1:3000/images/germen-gueto.png",
+      "authors": [
+        "Luz Edith Toro",
+        "Sofía Ramos",
+        "Paula Ramos",
+        "M.J. Romero",
+        "Sintra da Costa",
+        "Jorge Dóniz",
+        "Ibrahima Hernández"
+      ],
+      "creationDate": {
+        "season": "Primavera",
+        "year": 2019
+      },
+      "structure": [
+        {
+          "type": "text",
+          "content": "La aparición de los guetos es una consecuencia de las ciudades modernas. El diseño y la ubicación de los mismos hacía que sus habitantes estuvieran aislados y fueran excluidos. Incluso pertenecer a uno les servía para ser eles y no ser castigados por su cultura y tradiciones. En términos urbanos, un grupo social se considera vulnerable cuando dentro del espacio que habita sufre situaciones contrarias a lo que se puede considerar como bienestar, con una serie de características definidas: situaciones críticas constatadas o contextos en los que existan ciertas desventajas que favorezcan la llegada de esas condiciones."
+        },
+        {
+          "type": "text",
+          "content": "Una situación complicada que exige un análisis profundo en el que pueda haber una intervención múltiple. Las limitaciones existen, respecto a la obtención de datos actuales y fiables, porque los censos poblacionales son el recurso más adecuado para extraer todas las variables a estudiar y se elaboran cada 10 años. El último en España se realizó en 2011."
+        },
+        {
+          "type": "heading",
+          "content": "¿Existe o no vulnerabilidad?"
+        },
+        {
+          "type": "text",
+          "content": "Una situación complicada que exige un análisis profundo en el que pueda haber una intervención múltiple. Las limitaciones existen, respecto a la obtención de datos actuales y fiables, porque los censos poblacionales son el recurso más adecuado para extraer todas las variables a estudiar y se elaboran cada 10 años. El último en España se realizó en 2011."
+        },
+        {
+          "type": "text",
+          "content": "Una situación complicada que exige un análisis profundo en el que pueda haber una intervención múltiple. Las limitaciones existen, respecto a la obtención de datos actuales y fiables, porque los censos poblacionales son el recurso más adecuado para extraer todas las variables a estudiar y se elaboran cada 10 años. El último en España se realizó en 2011."
+        },
+        {
+          "type": "image",
+          "content": "http://127.0.0.1:3000/images/barrios-vulnerables.png"
+        },
+        {
+          "type": "subheading",
+          "content": "Barrios vulnerables en Canarias (2011)"
+        },
+        {
+          "type": "text",
+          "content": "Una situación complicada que exige un análisis profundo en el que pueda haber una intervención múltiple. Las limitaciones existen, respecto a la obtención de datos actuales y fiables, porque los censos poblacionales son el recurso más adecuado para extraer todas las variables a estudiar y se elaboran cada 10 años. El último en España se realizó en 2011."
+        }
+      ],
+      "categories": ["Guetos", "Historias"]
+    }
+  ]
+}

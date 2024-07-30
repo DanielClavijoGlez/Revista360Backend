@@ -5,7 +5,7 @@ var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 var helmet = require("helmet");
 
-require("/lib/connectMongoose");
+require("./lib/connectMongoose");
 
 var app = express();
 

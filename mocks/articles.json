@@ -42,7 +42,7 @@
           "content": "http://127.0.0.1:3000/images/barrios-vulnerables.png"
         },
         {
-          "type": "subheading",
+          "type": "image caption",
           "content": "Barrios vulnerables en Canarias (2011)"
         },
         {

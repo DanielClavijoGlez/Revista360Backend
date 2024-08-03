@@ -40,6 +40,15 @@ const articleSchema = mongoose.Schema({
   comments: [String],
 });
 
+articleSchema.statics.getArticles = async (filters, skip, limit) => {
+  const query = Article.find(filters, { __v: 0 });
+  query.skip(skip);
+  query.limit(limit);
+  const articles = await query.exec();
+
+  return articles;
+};
+
 const Article = mongoose.model("Article", articleSchema);
 
 module.exports = Article;

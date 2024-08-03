@@ -5,7 +5,7 @@ const mongoose = require("mongoose");
 const articleSchema = mongoose.Schema({
   title: { type: String, index: true },
   mainImage: String,
-  authors: [String],
+  authors: { type: [String], index: true },
   creationDate: {
     season: {
       type: String,
@@ -35,6 +35,7 @@ const articleSchema = mongoose.Schema({
       "Opiniones",
       "Editorial",
     ],
+    index: true,
   },
   comments: [String],
 });

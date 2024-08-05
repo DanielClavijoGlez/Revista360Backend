@@ -1,44 +1,44 @@
-"use strict";
+'use strict'
 
-const readLine = require("node:readline");
-const connection = require("../lib/connectMongoose");
-const articlesJson = require("../mocks/articles.json");
-const Article = require("../models/Article");
+const readLine = require('node:readline')
+const connection = require('../lib/connectMongoose')
+const articlesJson = require('../mocks/articles.json')
+const Article = require('../models/Article')
 
-main().catch((err) => console.log("Error in initDB script", err));
+main().catch((err) => console.log('Error in initDB script', err))
 
-async function main() {
-  await new Promise((resolve) => connection.once("open", resolve));
+async function main () {
+  await new Promise((resolve) => connection.once('open', resolve))
 
-  const deletePermission = await askPermissionToDelete();
-  if (!deletePermission) process.exit();
+  const deletePermission = await askPermissionToDelete()
+  if (!deletePermission) process.exit()
 
-  await initArticles();
+  await initArticles()
 
-  connection.close();
+  connection.close()
 }
 
-async function initArticles() {
-  const deleted = await Article.deleteMany();
-  console.log(`Deleted ${deleted.deletedCount} articles`);
+async function initArticles () {
+  const deleted = await Article.deleteMany()
+  console.log(`Deleted ${deleted.deletedCount} articles`)
 
-  const inserted = await Article.insertMany(articlesJson);
-  console.log(`Inserted ${inserted.length} articles`);
+  const inserted = await Article.insertMany(articlesJson)
+  console.log(`Inserted ${inserted.length} articles`)
 }
 
-function askPermissionToDelete() {
+function askPermissionToDelete () {
   return new Promise((resolve) => {
     const ifc = readLine.createInterface({
       input: process.stdin,
-      output: process.stdout,
-    });
+      output: process.stdout
+    })
     const question =
-      "Do you really want to delete all content in the database (no): ";
+      'Do you really want to delete all content in the database (no): '
     ifc.question(question, (response) => {
-      ifc.close();
+      ifc.close()
       resolve(
-        response.toLowerCase() === "si" || response.toLowerCase() === "sí"
-      );
-    });
-  });
+        response.toLowerCase() === 'si' || response.toLowerCase() === 'sí'
+      )
+    })
+  })
 }

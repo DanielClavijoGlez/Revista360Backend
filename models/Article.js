@@ -20,6 +20,7 @@ const articleSchema = mongoose.Schema({
         enum: ["text", "image", "heading", "image caption"],
       },
       content: String,
+      _id: false
     },
   ],
   categories: {

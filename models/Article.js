@@ -1,6 +1,6 @@
-"use strict";
+'use strict'
 
-const mongoose = require("mongoose");
+const mongoose = require('mongoose')
 
 const articleSchema = mongoose.Schema({
   title: { type: String, index: true },
@@ -9,47 +9,47 @@ const articleSchema = mongoose.Schema({
   creationDate: {
     season: {
       type: String,
-      enum: ["Primavera", "Verano", "Otoño", "Invierno"],
+      enum: ['Primavera', 'Verano', 'Otoño', 'Invierno']
     },
-    year: Number,
+    year: Number
   },
   structure: [
     {
       type: {
         type: String,
-        enum: ["text", "image", "heading", "image caption"],
+        enum: ['text', 'image', 'heading', 'image caption']
       },
       content: String,
       _id: false
-    },
+    }
   ],
   categories: {
     type: [String],
     enum: [
-      "Vidas Precarias",
-      "Mujeres",
-      "Guetos",
-      "Arenas",
-      "Historias",
-      "Miradas",
-      "Protagonistas",
-      "Opiniones",
-      "Editorial",
+      'Vidas Precarias',
+      'Mujeres',
+      'Guetos',
+      'Arenas',
+      'Historias',
+      'Miradas',
+      'Protagonistas',
+      'Opiniones',
+      'Editorial'
     ],
-    index: true,
+    index: true
   },
-  comments: [String],
-});
+  comments: [String]
+})
 
 articleSchema.statics.getArticles = async (filters, skip, limit) => {
-  const query = Article.find(filters, { __v: 0 });
-  query.skip(skip);
-  query.limit(limit);
-  const articles = await query.exec();
+  const query = Article.find(filters, { __v: 0 })
+  query.skip(skip)
+  query.limit(limit)
+  const articles = await query.exec()
 
-  return articles;
-};
+  return articles
+}
 
-const Article = mongoose.model("Article", articleSchema);
+const Article = mongoose.model('Article', articleSchema)
 
-module.exports = Article;
+module.exports = Article
